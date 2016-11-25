@@ -13,6 +13,7 @@
 		32E153B71DE84E1B00BD2A0E /* SurJournal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32E153B51DE84E1B00BD2A0E /* SurJournal.xcdatamodeld */; };
 		32E153B91DE84E1C00BD2A0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32E153B81DE84E1C00BD2A0E /* Assets.xcassets */; };
 		32E153BC1DE84E1C00BD2A0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E153BA1DE84E1C00BD2A0E /* LaunchScreen.storyboard */; };
+		32E153CA1DE8945A00BD2A0E /* FullSizeRender.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E153C91DE8945A00BD2A0E /* FullSizeRender.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,10 @@
 		32E153B81DE84E1C00BD2A0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32E153BB1DE84E1C00BD2A0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32E153BD1DE84E1D00BD2A0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32E153C61DE8936B00BD2A0E /* SurfJournalDatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = SurfJournalDatabase.sqlite; path = CoreDataSeed/SurfJournalDatabase.sqlite; sourceTree = "<group>"; };
+		32E153C71DE8936B00BD2A0E /* SurfJournalDatabase.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SurfJournalDatabase.sqlite-shm"; path = "CoreDataSeed/SurfJournalDatabase.sqlite-shm"; sourceTree = "<group>"; };
+		32E153C81DE8936B00BD2A0E /* SurfJournalDatabase.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SurfJournalDatabase.sqlite-wal"; path = "CoreDataSeed/SurfJournalDatabase.sqlite-wal"; sourceTree = "<group>"; };
+		32E153C91DE8945A00BD2A0E /* FullSizeRender.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FullSizeRender.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +61,9 @@
 		32E153AD1DE84E1800BD2A0E /* SurJournal */ = {
 			isa = PBXGroup;
 			children = (
+				32E153C51DE8935500BD2A0E /* CoreDataSeed */,
 				32E153AE1DE84E1900BD2A0E /* AppDelegate.swift */,
+				32E153C91DE8945A00BD2A0E /* FullSizeRender.jpg */,
 				32E153B01DE84E1A00BD2A0E /* ViewController.swift */,
 				32E153B21DE84E1A00BD2A0E /* Main.storyboard */,
 				32E153B81DE84E1C00BD2A0E /* Assets.xcassets */,
@@ -65,6 +72,16 @@
 				32E153B51DE84E1B00BD2A0E /* SurJournal.xcdatamodeld */,
 			);
 			path = SurJournal;
+			sourceTree = "<group>";
+		};
+		32E153C51DE8935500BD2A0E /* CoreDataSeed */ = {
+			isa = PBXGroup;
+			children = (
+				32E153C61DE8936B00BD2A0E /* SurfJournalDatabase.sqlite */,
+				32E153C71DE8936B00BD2A0E /* SurfJournalDatabase.sqlite-shm */,
+				32E153C81DE8936B00BD2A0E /* SurfJournalDatabase.sqlite-wal */,
+			);
+			name = CoreDataSeed;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +116,7 @@
 				TargetAttributes = {
 					32E153AA1DE84E1800BD2A0E = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = ML92WQMC99;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -129,6 +147,7 @@
 				32E153BC1DE84E1C00BD2A0E /* LaunchScreen.storyboard in Resources */,
 				32E153B91DE84E1C00BD2A0E /* Assets.xcassets in Resources */,
 				32E153B41DE84E1A00BD2A0E /* Main.storyboard in Resources */,
+				32E153CA1DE8945A00BD2A0E /* FullSizeRender.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +283,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ML92WQMC99;
 				INFOPLIST_FILE = SurJournal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nvovap.SurJournal;
@@ -276,6 +296,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ML92WQMC99;
 				INFOPLIST_FILE = SurJournal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nvovap.SurJournal;
