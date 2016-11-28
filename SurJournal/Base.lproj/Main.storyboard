@@ -13,7 +13,7 @@
         <!--Surf Journal-->
         <scene sceneID="NTZ-am-DP7">
             <objects>
-                <tableViewController id="MoZ-tn-Opj" sceneMemberID="viewController">
+                <tableViewController id="MoZ-tn-Opj" customClass="JournalListViewController" customModule="SurJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="H1x-Bo-7tu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,7 +155,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="42H-Jo-hd1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1056.8" y="-49.025487256371818"/>
+            <point key="canvasLocation" x="1055" y="-49"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="N9u-rp-YSQ">

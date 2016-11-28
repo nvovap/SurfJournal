@@ -56,6 +56,8 @@ class CoreDataStack {
                 let seededDatabaseURL = bundle.url(forResource: self.seedName, withExtension: "sqlite")
                 
                 
+                storeDescription.type = NSSQLiteStoreType
+                storeDescription.url  = url
                 
                 //  let seededDatabaseURL = bundle.url(forResource: "FullSizeRender", withExtension: "jpg")
                 
@@ -92,8 +94,7 @@ class CoreDataStack {
                     
                 }
                 
-                storeDescription.type = NSSQLiteStoreType
-                storeDescription.url  = url
+                
                 
             }
         })
