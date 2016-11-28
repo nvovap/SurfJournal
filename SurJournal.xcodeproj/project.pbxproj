@@ -14,6 +14,16 @@
 		32E153B91DE84E1C00BD2A0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32E153B81DE84E1C00BD2A0E /* Assets.xcassets */; };
 		32E153BC1DE84E1C00BD2A0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E153BA1DE84E1C00BD2A0E /* LaunchScreen.storyboard */; };
 		32E153CA1DE8945A00BD2A0E /* FullSizeRender.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32E153C91DE8945A00BD2A0E /* FullSizeRender.jpg */; };
+		32FEFDEE1DEC2F3B00B9C019 /* SurfJournalDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 32E153C61DE8936B00BD2A0E /* SurfJournalDatabase.sqlite */; };
+		32FEFDEF1DEC2F3E00B9C019 /* SurfJournalDatabase.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = 32E153C71DE8936B00BD2A0E /* SurfJournalDatabase.sqlite-shm */; };
+		32FEFDF01DEC2F4100B9C019 /* SurfJournalDatabase.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 32E153C81DE8936B00BD2A0E /* SurfJournalDatabase.sqlite-wal */; };
+		32FEFDF21DEC663800B9C019 /* SurfEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FEFDF11DEC663800B9C019 /* SurfEntryTableViewCell.swift */; };
+		32FEFDF41DEC679B00B9C019 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FEFDF31DEC679B00B9C019 /* JournalEntry.swift */; };
+		32FEFDF71DEC6BD500B9C019 /* JournalEntry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FEFDF51DEC6BD500B9C019 /* JournalEntry+CoreDataClass.swift */; };
+		32FEFDF81DEC6BD500B9C019 /* JournalEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FEFDF61DEC6BD500B9C019 /* JournalEntry+CoreDataProperties.swift */; };
+		32FEFDFB1DEC6D0C00B9C019 /* JournalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FEFDFA1DEC6D0C00B9C019 /* JournalListViewController.swift */; };
+		32FEFDFD1DEC6D9900B9C019 /* JournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FEFDFC1DEC6D9900B9C019 /* JournalEntryViewController.swift */; };
+		32FEFE001DEC6E4700B9C019 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FEFDFF1DEC6E4700B9C019 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +39,13 @@
 		32E153C71DE8936B00BD2A0E /* SurfJournalDatabase.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SurfJournalDatabase.sqlite-shm"; path = "CoreDataSeed/SurfJournalDatabase.sqlite-shm"; sourceTree = "<group>"; };
 		32E153C81DE8936B00BD2A0E /* SurfJournalDatabase.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SurfJournalDatabase.sqlite-wal"; path = "CoreDataSeed/SurfJournalDatabase.sqlite-wal"; sourceTree = "<group>"; };
 		32E153C91DE8945A00BD2A0E /* FullSizeRender.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FullSizeRender.jpg; sourceTree = "<group>"; };
+		32FEFDF11DEC663800B9C019 /* SurfEntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurfEntryTableViewCell.swift; sourceTree = "<group>"; };
+		32FEFDF31DEC679B00B9C019 /* JournalEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
+		32FEFDF51DEC6BD500B9C019 /* JournalEntry+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JournalEntry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		32FEFDF61DEC6BD500B9C019 /* JournalEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JournalEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		32FEFDFA1DEC6D0C00B9C019 /* JournalListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalListViewController.swift; sourceTree = "<group>"; };
+		32FEFDFC1DEC6D9900B9C019 /* JournalEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalEntryViewController.swift; sourceTree = "<group>"; };
+		32FEFDFF1DEC6E4700B9C019 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,10 +78,13 @@
 		32E153AD1DE84E1800BD2A0E /* SurJournal */ = {
 			isa = PBXGroup;
 			children = (
+				32FEFDFE1DEC6DB900B9C019 /* Views */,
+				32FEFDF91DEC6BEA00B9C019 /* DataModel */,
 				32E153C51DE8935500BD2A0E /* CoreDataSeed */,
 				32E153AE1DE84E1900BD2A0E /* AppDelegate.swift */,
 				32E153C91DE8945A00BD2A0E /* FullSizeRender.jpg */,
 				32E153B01DE84E1A00BD2A0E /* ViewController.swift */,
+				32FEFDF11DEC663800B9C019 /* SurfEntryTableViewCell.swift */,
 				32E153B21DE84E1A00BD2A0E /* Main.storyboard */,
 				32E153B81DE84E1C00BD2A0E /* Assets.xcassets */,
 				32E153BA1DE84E1C00BD2A0E /* LaunchScreen.storyboard */,
@@ -82,6 +102,26 @@
 				32E153C81DE8936B00BD2A0E /* SurfJournalDatabase.sqlite-wal */,
 			);
 			name = CoreDataSeed;
+			sourceTree = "<group>";
+		};
+		32FEFDF91DEC6BEA00B9C019 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				32FEFDF61DEC6BD500B9C019 /* JournalEntry+CoreDataProperties.swift */,
+				32FEFDFF1DEC6E4700B9C019 /* CoreDataStack.swift */,
+				32FEFDF51DEC6BD500B9C019 /* JournalEntry+CoreDataClass.swift */,
+				32FEFDF31DEC679B00B9C019 /* JournalEntry.swift */,
+			);
+			name = DataModel;
+			sourceTree = "<group>";
+		};
+		32FEFDFE1DEC6DB900B9C019 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32FEFDFA1DEC6D0C00B9C019 /* JournalListViewController.swift */,
+				32FEFDFC1DEC6D9900B9C019 /* JournalEntryViewController.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,9 +185,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				32E153BC1DE84E1C00BD2A0E /* LaunchScreen.storyboard in Resources */,
+				32FEFDEF1DEC2F3E00B9C019 /* SurfJournalDatabase.sqlite-shm in Resources */,
 				32E153B91DE84E1C00BD2A0E /* Assets.xcassets in Resources */,
 				32E153B41DE84E1A00BD2A0E /* Main.storyboard in Resources */,
 				32E153CA1DE8945A00BD2A0E /* FullSizeRender.jpg in Resources */,
+				32FEFDEE1DEC2F3B00B9C019 /* SurfJournalDatabase.sqlite in Resources */,
+				32FEFDF01DEC2F4100B9C019 /* SurfJournalDatabase.sqlite-wal in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,9 +201,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32FEFDFB1DEC6D0C00B9C019 /* JournalListViewController.swift in Sources */,
+				32FEFDF21DEC663800B9C019 /* SurfEntryTableViewCell.swift in Sources */,
 				32E153B71DE84E1B00BD2A0E /* SurJournal.xcdatamodeld in Sources */,
+				32FEFDF81DEC6BD500B9C019 /* JournalEntry+CoreDataProperties.swift in Sources */,
+				32FEFDF71DEC6BD500B9C019 /* JournalEntry+CoreDataClass.swift in Sources */,
+				32FEFE001DEC6E4700B9C019 /* CoreDataStack.swift in Sources */,
+				32FEFDF41DEC679B00B9C019 /* JournalEntry.swift in Sources */,
 				32E153B11DE84E1A00BD2A0E /* ViewController.swift in Sources */,
 				32E153AF1DE84E1900BD2A0E /* AppDelegate.swift in Sources */,
+				32FEFDFD1DEC6D9900B9C019 /* JournalEntryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +374,7 @@
 				32E153C21DE84E1D00BD2A0E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
