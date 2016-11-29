@@ -25,6 +25,10 @@ class CoreDataStack {
         
         //NSPersistentContainer(name: <#T##String#>, managedObjectModel: <#T##NSManagedObjectModel#>)
         
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let applicationDocumentsDirectory: URL = urls[urls.count-1]
+        let url = applicationDocumentsDirectory.appendingPathComponent("\(self.seedName).sqlite")
+        
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 
@@ -44,22 +48,23 @@ class CoreDataStack {
             } else {
                 
                 
-                let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-                let applicationDocumentsDirectory: URL = urls[urls.count-1]
                 
-                let url = applicationDocumentsDirectory.appendingPathComponent("\(self.seedName).sqlite")
+                
+               
                 
                 let bundle = Bundle.main
                 
-                print(bundle)
+                //print(bundle)
                 
                 let seededDatabaseURL = bundle.url(forResource: self.seedName, withExtension: "sqlite")
                 
+               
                 
                 storeDescription.type = NSSQLiteStoreType
                 storeDescription.url  = url
                 
-                //  let seededDatabaseURL = bundle.url(forResource: "FullSizeRender", withExtension: "jpg")
+                print(url)
+                print(storeDescription.url ?? "nill")
                 
                 let didCopyDatabase: Bool
                 
@@ -98,6 +103,13 @@ class CoreDataStack {
                 
             }
         })
+        
+        print(container.persistentStoreDescriptions[0])
+        
+        container.persistentStoreDescriptions[0].url = url
+        container.persistentStoreDescriptions[0].type = NSSQLiteStoreType
+        print(container.persistentStoreDescriptions[0])
+        
         return container
     }()
     

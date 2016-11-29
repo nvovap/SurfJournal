@@ -23,6 +23,53 @@ class JournalListViewController: UITableViewController, NSFetchedResultsControll
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         coreDataStack = CoreDataStack()
+        
+        
+        let contex = coreDataStack.persistentContainer.viewContext
+        
+        let featchRequest = NSFetchRequest<JournalEntry>(entityName: "JournalEntry")
+        
+        do {
+            let journalEntry = try contex.fetch(featchRequest)
+            
+            for record in journalEntry {
+                print("========================================================================")
+                print("Date \(record.date)  height \(record.height) location \(record.location)")
+                print("")
+                print("period \(record.period)  rating \(record.rating) wind \(record.wind)")
+            }
+            
+        } catch let error {
+            print(error)
+        }
+        
+        
+        
+                let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+                print(urls.count)
+                let url = urls[urls.count-1]
+                print(url)
+        
+        let count = coreDataStack.persistentContainer.persistentStoreDescriptions.count - 1
+        print(coreDataStack.persistentContainer.persistentStoreDescriptions[count])
+        
+        //        if let url = url {
+                    do {
+                        let filesInDirectory = try FileManager.default.contentsOfDirectory(atPath: url.path)
+        
+                        for file in filesInDirectory {
+                            print(file)
+        
+        
+                        }
+        
+                    } catch let error {
+                        print(error)
+                    }
+                    
+                //}
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,7 +80,10 @@ class JournalListViewController: UITableViewController, NSFetchedResultsControll
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return fetchedResultsController.sections?.count ?? 0
+        let count = fetchedResultsController.sections?.count ?? 0
+        print(count)
+        
+        return count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,6 +95,19 @@ class JournalListViewController: UITableViewController, NSFetchedResultsControll
     }
 
     
+    override func tableView(_ tableView: UITableView,
+                            cellForRowAt indexPath: IndexPath)
+        -> UITableViewCell {
+            
+            let cell =
+                tableView.dequeueReusableCell(withIdentifier: "Cell",
+                                              for: indexPath) as! SurfEntryTableViewCell
+            
+            configureCell(cell, indexPath: indexPath)
+            
+            return cell
+    }
+    
     func configureCell(_ cell: SurfEntryTableViewCell,
                        indexPath:IndexPath) {
         
@@ -54,7 +117,7 @@ class JournalListViewController: UITableViewController, NSFetchedResultsControll
         
         cell.dateLabel.text = surfJournalEntry.stringForDate()
         
-       
+        
         switch surfJournalEntry.rating {
             case 1:
                 cell.starOneFilledImageView.isHidden = false
@@ -114,6 +177,9 @@ class JournalListViewController: UITableViewController, NSFetchedResultsControll
         
         fetchRequest.sortDescriptors = [sortDescriptor]
         
+        let count = coreDataStack.persistentContainer.persistentStoreDescriptions.count - 1
+        print(coreDataStack.persistentContainer.persistentStoreDescriptions[count])
+        
         // Edit the section name key path and cache name if appropriate.
         // nil for section name key path means "no sections".
         let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: coreDataStack.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: "Master")
@@ -135,6 +201,10 @@ class JournalListViewController: UITableViewController, NSFetchedResultsControll
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.tableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.tableView.endUpdates()
     }
     
 //    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
@@ -165,9 +235,7 @@ class JournalListViewController: UITableViewController, NSFetchedResultsControll
         }
     }
     
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        self.tableView.endUpdates()
-    }
+    
     
     
     override func tableView(_ tableView: UITableView,
