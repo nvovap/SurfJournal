@@ -26,8 +26,13 @@ class CoreDataStack {
         //NSPersistentContainer(name: <#T##String#>, managedObjectModel: <#T##NSManagedObjectModel#>)
         
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        //let urls = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)
         let applicationDocumentsDirectory: URL = urls[urls.count-1]
         let url = applicationDocumentsDirectory.appendingPathComponent("\(self.seedName).sqlite")
+        
+        container.persistentStoreDescriptions[0].url = url
+        container.persistentStoreDescriptions[0].type = NSSQLiteStoreType
+        //print(container.persistentStoreDescriptions[0])
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -46,25 +51,8 @@ class CoreDataStack {
                  */
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             } else {
-                
-                
-                
-                
-               
-                
                 let bundle = Bundle.main
-                
-                //print(bundle)
-                
                 let seededDatabaseURL = bundle.url(forResource: self.seedName, withExtension: "sqlite")
-                
-               
-                
-                storeDescription.type = NSSQLiteStoreType
-                storeDescription.url  = url
-                
-                print(url)
-                print(storeDescription.url ?? "nill")
                 
                 let didCopyDatabase: Bool
                 
@@ -106,9 +94,7 @@ class CoreDataStack {
         
         print(container.persistentStoreDescriptions[0])
         
-        container.persistentStoreDescriptions[0].url = url
-        container.persistentStoreDescriptions[0].type = NSSQLiteStoreType
-        print(container.persistentStoreDescriptions[0])
+//        print(container.persistentStoreDescriptions[0])
         
         return container
     }()

@@ -13,6 +13,31 @@ class JournalListViewController: UITableViewController, NSFetchedResultsControll
     
     var coreDataStack: CoreDataStack!
 
+    @IBAction func testReadData(_ sender: Any) {
+        
+        let count = coreDataStack.persistentContainer.persistentStoreDescriptions.count - 1
+        print(coreDataStack.persistentContainer.persistentStoreDescriptions[count])
+        
+        let contex = coreDataStack.persistentContainer.viewContext
+        
+        let featchRequest = NSFetchRequest<JournalEntry>(entityName: "JournalEntry")
+        
+        do {
+            let journalEntry = try contex.fetch(featchRequest)
+            
+            for record in journalEntry {
+                print("========================================================================")
+                print("Date \(record.date)  height \(record.height) location \(record.location)")
+                print("")
+                print("period \(record.period)  rating \(record.rating) wind \(record.wind)")
+            }
+            
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

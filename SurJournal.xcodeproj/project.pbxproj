@@ -37,7 +37,7 @@
 		32E153BD1DE84E1D00BD2A0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32E153C61DE8936B00BD2A0E /* SurfJournalDatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = SurfJournalDatabase.sqlite; path = CoreDataSeed/SurfJournalDatabase.sqlite; sourceTree = "<group>"; };
 		32E153C71DE8936B00BD2A0E /* SurfJournalDatabase.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SurfJournalDatabase.sqlite-shm"; path = "CoreDataSeed/SurfJournalDatabase.sqlite-shm"; sourceTree = "<group>"; };
-		32E153C81DE8936B00BD2A0E /* SurfJournalDatabase.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SurfJournalDatabase.sqlite-wal"; path = "CoreDataSeed/SurfJournalDatabase.sqlite-wal"; sourceTree = "<group>"; };
+		32E153C81DE8936B00BD2A0E /* SurfJournalDatabase.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = text; name = "SurfJournalDatabase.sqlite-wal"; path = "CoreDataSeed/SurfJournalDatabase.sqlite-wal"; sourceTree = "<group>"; };
 		32E153C91DE8945A00BD2A0E /* FullSizeRender.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FullSizeRender.jpg; sourceTree = "<group>"; };
 		32FEFDF11DEC663800B9C019 /* SurfEntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurfEntryTableViewCell.swift; sourceTree = "<group>"; };
 		32FEFDF31DEC679B00B9C019 /* JournalEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
@@ -335,6 +335,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ML92WQMC99;
 				INFOPLIST_FILE = SurJournal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nvovap.SurJournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -348,6 +349,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ML92WQMC99;
 				INFOPLIST_FILE = SurJournal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nvovap.SurJournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
